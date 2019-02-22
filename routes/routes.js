@@ -11,4 +11,18 @@ router.get('/', function(req, res) {
   })
 });
 
+router.post('/recipes', function(req, res){
+  let newRecipe = new Recipe({ name: req.body.name });
+
+  newRecipe
+    .save()
+    .then(function(result){
+      console.log(result);
+      res.redirect('/');
+    }).catch(function(err){
+      console.log(err);
+      res.redirect('/');
+    });
+});
+
 module.exports = router;

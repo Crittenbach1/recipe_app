@@ -15,6 +15,16 @@
       <button type="submit">Add</button>
     </form>
 
+    <ul>
+    {{#recipes}}
+      <li>
+        <form action="/recipes/" method="post">
+          {{name}}
+        </form>
+      </li>
+    {{/recipes}}
+  </ul>
+
 </body>
 
 </html>
