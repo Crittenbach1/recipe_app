@@ -6,22 +6,16 @@ let recipeSchema = new Schema({
      type: String,
      required: true
    },
-   picture: {
-     type: Boolean,
-     default: false
-   },
-   difficulty: {
-     type: String,
-     required: true
-   },
-   quality: {
-     type: String,
-     required: true
-   },
-   time_needed: {
-     type: String,
-     required: true
-   }
+   steps: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Step'
+    }
+    ],
+  created: {
+    type: Date,
+    default: Date.now
+  }
 });
 
 module.exports = mongoose.model('Recipe', recipeSchema);
