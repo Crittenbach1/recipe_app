@@ -1,21 +1,17 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-let recipeSchema = new Schema({
-   name: {
-     type: String,
-     required: true
-   },
-   steps: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: 'Step'
-    }
-    ],
-  created: {
-    type: Date,
-    default: Date.now
-  }
-});
+
+
+let recipeSchema = new Schema;
+
+    recipeSchema.add({
+      name: {
+        type: String,
+        required: true
+      }
+    });
+
+
 
 module.exports = mongoose.model('Recipe', recipeSchema);

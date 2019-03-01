@@ -6,7 +6,7 @@ const routes = require('./routes/routes');
 
 mongoose.Promise = global.Promise;
 
-mongoose.connect('mongodb://localhost/mongoose_express_todos', { useNewUrlParser: true })
+mongoose.connect('mongodb://localhost/recipe_app', { useNewUrlParser: true })
   .then(function(){
     console.log('Database connected.');
   });

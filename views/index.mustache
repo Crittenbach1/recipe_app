@@ -11,19 +11,18 @@
   <h1>Recipe App</h1>
   <h2>Create a new Recipe:</h2>
     <form action="/recipes" method="post">
-      <input type="text" name ="name" >
+      <input type="text" name="name" >
       <button type="submit">Add</button>
     </form>
 
     <ul>
     {{#recipes}}
       <li>
-        <form action="/recipes/" method="post">
-          {{name}}
-        </form>
+          {{name}} 
       </li>
     {{/recipes}}
   </ul>
+
 
 </body>
 
