@@ -31,8 +31,24 @@ router.post('/recipes/:id/steps', function(req, res){
 
   let recipeId = req.params.id;
 
-  console.log("new steps route");
+  Recipe.findById(recipeId)
+    .exec()
+    .then(function(recipe) {
+      var step = {description: req.body.description};
 
-});
+      if (Array.isArray(recipe.steps)) {
+          recipe.steps.push(step);
+          console.log(recipe);
+      } else {
+          recipe.steps = [];
+          recipe.steps.push(step);
+      }
+    recipe
+   .save()
+    }).then(function(result){
+       res.redirect('/');
+    })
+);
+
 
 module.exports = router;
