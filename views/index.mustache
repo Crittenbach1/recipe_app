@@ -22,9 +22,16 @@
           <form action="/recipes/{{_id}}/steps" method="post">
             <input type="text" name="description" >
             <button type="submit">Add</button>
-          </form> 
-
+          </form>
+          <ol>
+            {{#steps}}
+              <li>
+                 {{description}}
+              </li>
+            {{/steps}}
+          </ol>
       </li>
+    </form>
     {{/recipes}}
   </ul>
 

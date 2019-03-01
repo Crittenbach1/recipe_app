@@ -48,7 +48,7 @@ router.post('/recipes/:id/steps', function(req, res){
     }).then(function(result){
        res.redirect('/');
     })
-);
 
+  });
 
 module.exports = router;
