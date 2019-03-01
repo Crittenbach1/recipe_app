@@ -18,7 +18,12 @@
     <ul>
     {{#recipes}}
       <li>
-          {{name}} 
+          {{name}} - Add a Step:
+          <form action="/recipes/{{_id}}/steps" method="post">
+            <input type="text" name="description" >
+            <button type="submit">Add</button>
+          </form> 
+
       </li>
     {{/recipes}}
   </ul>
